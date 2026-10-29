@@ -653,5 +653,41 @@
     ],
     "file": "textures/toilet-stripped-plaster.png",
     "method": "Stripped plaster with putty and yellow remnants, no grout"
+  },
+  "bedroom-curtain-left-c-body": {
+    "source_image": "house-photo/спальня-со-стороны-соседей.jpg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      770,
+      160,
+      72,
+      180
+    ],
+    "file": "textures/bedroom-curtain-left-c-body.png",
+    "scale_m": [
+      0.45,
+      0.95
+    ]
+  },
+  "bedroom-curtain-right-c-body": {
+    "source_image": "house-photo/спальня-со-стороны-соседей.jpg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      770,
+      160,
+      72,
+      180
+    ],
+    "file": "textures/bedroom-curtain-right-c-body.png",
+    "scale_m": [
+      0.45,
+      0.95
+    ]
   }
 }
