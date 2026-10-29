@@ -1,0 +1,641 @@
+{
+  "hall-frame-n-0": {
+    "source_image": "house-photo/прихожая-со-стороны-входной-двери.jpg",
+    "image_size": [
+      675,
+      900
+    ],
+    "rect_xywh": [
+      142,
+      302,
+      16,
+      35
+    ],
+    "file": "textures/hall-frame-n-0.png",
+    "face": "+y",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "hall-frame-n-1": {
+    "source_image": "house-photo/прихожая-со-стороны-входной-двери.jpg",
+    "image_size": [
+      675,
+      900
+    ],
+    "rect_xywh": [
+      178,
+      176,
+      24,
+      42
+    ],
+    "file": "textures/hall-frame-n-1.png",
+    "face": "+y",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "hall-frame-n-2": {
+    "source_image": "house-photo/прихожая-со-стороны-входной-двери.jpg",
+    "image_size": [
+      675,
+      900
+    ],
+    "rect_xywh": [
+      229,
+      261,
+      14,
+      39
+    ],
+    "file": "textures/hall-frame-n-2.png",
+    "face": "+y",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "hall-frame-n-3": {
+    "source_image": "house-photo/прихожая-со-стороны-входной-двери.jpg",
+    "image_size": [
+      675,
+      900
+    ],
+    "rect_xywh": [
+      3,
+      130,
+      44,
+      69
+    ],
+    "file": "textures/hall-frame-n-3.png",
+    "face": "+y",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "hall-frame-n-4": {
+    "source_image": "house-photo/прихожая-со-стороны-входной-двери.jpg",
+    "image_size": [
+      675,
+      900
+    ],
+    "rect_xywh": [
+      30,
+      12,
+      42,
+      49
+    ],
+    "file": "textures/hall-frame-n-4.png",
+    "face": "+y",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "hall-frame-s-0": {
+    "source_image": "house-photo/прихожая-со-стороны-входной-двери.jpg",
+    "image_size": [
+      675,
+      900
+    ],
+    "rect_xywh": [
+      561,
+      175,
+      28,
+      47
+    ],
+    "file": "textures/hall-frame-s-0.png",
+    "face": "-y",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "hall-frame-s-1": {
+    "source_image": "house-photo/named/прихожая-стена-с-картинами-и-фрамугой.jpg",
+    "image_size": [
+      675,
+      900
+    ],
+    "rect_xywh": [
+      405,
+      155,
+      83,
+      77
+    ],
+    "file": "textures/hall-frame-s-1.png",
+    "face": "-y",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "hall-frame-s-2": {
+    "source_image": "house-photo/named/прихожая-стена-с-картинами-и-фрамугой.jpg",
+    "image_size": [
+      675,
+      900
+    ],
+    "rect_xywh": [
+      236,
+      332,
+      35,
+      35
+    ],
+    "file": "textures/hall-frame-s-2.png",
+    "face": "-y",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "hall-frame-s-3": {
+    "source_image": "house-photo/прихожая-со-стороны-входной-двери.jpg",
+    "image_size": [
+      675,
+      900
+    ],
+    "rect_xywh": [
+      578,
+      344,
+      18,
+      19
+    ],
+    "file": "textures/hall-frame-s-3.png",
+    "face": "-y",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "hall-frame-s-4": {
+    "source_image": "house-photo/прихожая-со-стороны-входной-двери.jpg",
+    "image_size": [
+      675,
+      900
+    ],
+    "rect_xywh": [
+      650,
+      223,
+      22,
+      36
+    ],
+    "file": "textures/hall-frame-s-4.png",
+    "face": "-y",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "hall-frame-arch-0": {
+    "source_image": "house-photo/прихожая-со-стороны-входной-двери.jpg",
+    "image_size": [
+      675,
+      900
+    ],
+    "rect_xywh": [
+      286,
+      286,
+      44,
+      19
+    ],
+    "file": "textures/hall-frame-arch-0.png",
+    "face": "+x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "hall-frame-arch-1": {
+    "source_image": "house-photo/прихожая-со-стороны-входной-двери.jpg",
+    "image_size": [
+      675,
+      900
+    ],
+    "rect_xywh": [
+      375,
+      308,
+      45,
+      22
+    ],
+    "file": "textures/hall-frame-arch-1.png",
+    "face": "+x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "kids-art-desk-0": {
+    "source_image": "house-photo/детская-со-стороны-окна.jpg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      817,
+      48,
+      80,
+      257
+    ],
+    "file": "textures/kids-art-desk-0.png",
+    "face": "+x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "kids-art-desk-1": {
+    "source_image": "house-photo/детская-со-стороны-окна.jpg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      726,
+      129,
+      88,
+      176
+    ],
+    "file": "textures/kids-art-desk-1.png",
+    "face": "+x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "kids-art-desk-2": {
+    "source_image": "house-photo/детская-со-стороны-окна.jpg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      618,
+      180,
+      105,
+      125
+    ],
+    "file": "textures/kids-art-desk-2.png",
+    "face": "+x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "kids-art-low-0": {
+    "source_image": "house-photo/named/детская-стена-с-тумбами-и-растениями.jpg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      196,
+      112,
+      96,
+      193
+    ],
+    "file": "textures/kids-art-low-0.png",
+    "face": "-x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "kids-art-low-1": {
+    "source_image": "house-photo/named/детская-стена-с-тумбами-и-растениями.jpg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      298,
+      94,
+      105,
+      211
+    ],
+    "file": "textures/kids-art-low-1.png",
+    "face": "-x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "kids-art-low-2": {
+    "source_image": "house-photo/named/детская-стена-с-тумбами-и-растениями.jpg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      409,
+      65,
+      130,
+      240
+    ],
+    "file": "textures/kids-art-low-2.png",
+    "face": "-x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "kids-small-picture": {
+    "source_image": "house-photo/named/детская-кровать-и-окно.jpg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      442,
+      199,
+      32,
+      80
+    ],
+    "file": "textures/kids-small-picture.png",
+    "face": "+x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "living-framed-photo": {
+    "source_image": "house-photo/зал-вид-с-дивана.jpeg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      391,
+      265,
+      12,
+      18
+    ],
+    "file": "textures/living-framed-photo.png",
+    "face": "+x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "living-art-sofa-0": {
+    "source_image": "house-photo/зал-вид-на-диван.jpeg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      413,
+      119,
+      37,
+      82
+    ],
+    "file": "textures/living-art-sofa-0.png",
+    "face": "-x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "living-art-sofa-1": {
+    "source_image": "house-photo/зал-вид-на-диван.jpeg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      454,
+      107,
+      36,
+      105
+    ],
+    "file": "textures/living-art-sofa-1.png",
+    "face": "-x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "living-art-sofa-2": {
+    "source_image": "house-photo/зал-вид-на-диван.jpeg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      497,
+      91,
+      37,
+      132
+    ],
+    "file": "textures/living-art-sofa-2.png",
+    "face": "-x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "living-art-sofa-3": {
+    "source_image": "house-photo/зал-вид-на-диван.jpeg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      541,
+      104,
+      38,
+      108
+    ],
+    "file": "textures/living-art-sofa-3.png",
+    "face": "-x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "living-art-sofa-4": {
+    "source_image": "house-photo/зал-вид-на-диван.jpeg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      585,
+      116,
+      38,
+      83
+    ],
+    "file": "textures/living-art-sofa-4.png",
+    "face": "-x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "living-art-tv-0": {
+    "source_image": "house-photo/зал-вид-с-дивана.jpeg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      478,
+      114,
+      38,
+      86
+    ],
+    "file": "textures/living-art-tv-0.png",
+    "face": "+x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "living-art-tv-1": {
+    "source_image": "house-photo/зал-вид-с-дивана.jpeg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      442,
+      102,
+      32,
+      105
+    ],
+    "file": "textures/living-art-tv-1.png",
+    "face": "+x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "living-art-tv-2": {
+    "source_image": "house-photo/зал-вид-с-дивана.jpeg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      399,
+      90,
+      39,
+      130
+    ],
+    "file": "textures/living-art-tv-2.png",
+    "face": "+x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "living-art-tv-3": {
+    "source_image": "house-photo/зал-вид-с-дивана.jpeg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      355,
+      99,
+      39,
+      108
+    ],
+    "file": "textures/living-art-tv-3.png",
+    "face": "+x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "living-art-tv-4": {
+    "source_image": "house-photo/зал-вид-с-дивана.jpeg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      312,
+      106,
+      39,
+      89
+    ],
+    "file": "textures/living-art-tv-4.png",
+    "face": "+x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "living-car-picture-0": {
+    "source_image": "house-photo/зал-вид-с-дивана.jpeg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      314,
+      245,
+      39,
+      25
+    ],
+    "file": "textures/living-car-picture-0.png",
+    "face": "+x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "living-car-picture-1": {
+    "source_image": "house-photo/зал-вид-с-дивана.jpeg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      479,
+      249,
+      36,
+      23
+    ],
+    "file": "textures/living-car-picture-1.png",
+    "face": "+x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "kitchen-backsplash": {
+    "source_image": "house-photo/named/кухня-правая-стена-пенал-и-столешница.jpg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      378,
+      329,
+      96,
+      48
+    ],
+    "file": "textures/kitchen-backsplash.png",
+    "face": "-y",
+    "method": "Photographed pebble backsplash crop at 900px"
+  },
+  "bedroom-art-east-0": {
+    "source_image": "house-photo/спальня-со-стороны-детской.jpg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      446,
+      208,
+      29,
+      64
+    ],
+    "file": "textures/bedroom-art-east-0.png",
+    "face": "-x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "bedroom-art-east-1": {
+    "source_image": "house-photo/спальня-со-стороны-детской.jpg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      480,
+      197,
+      28,
+      83
+    ],
+    "file": "textures/bedroom-art-east-1.png",
+    "face": "-x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "bedroom-art-east-2": {
+    "source_image": "house-photo/спальня-со-стороны-детской.jpg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      516,
+      179,
+      32,
+      112
+    ],
+    "file": "textures/bedroom-art-east-2.png",
+    "face": "-x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "bedroom-art-east-3": {
+    "source_image": "house-photo/спальня-со-стороны-детской.jpg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      555,
+      187,
+      31,
+      92
+    ],
+    "file": "textures/bedroom-art-east-3.png",
+    "face": "-x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "bedroom-art-east-4": {
+    "source_image": "house-photo/спальня-со-стороны-детской.jpg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      598,
+      199,
+      34,
+      70
+    ],
+    "file": "textures/bedroom-art-east-4.png",
+    "face": "-x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "bedroom-photo-east": {
+    "source_image": "house-photo/спальня-со-стороны-детской.jpg",
+    "image_size": [
+      900,
+      675
+    ],
+    "rect_xywh": [
+      552,
+      317,
+      23,
+      35
+    ],
+    "file": "textures/bedroom-photo-east.png",
+    "face": "-x",
+    "method": "axis-aligned photo crop; perspective retained"
+  },
+  "toilet-stripped-plaster": {
+    "source_image": "house-photo/named/туалет-левая-стена-и-петли-шахты.jpg",
+    "image_size": [
+      675,
+      900
+    ],
+    "rect_xywh": [
+      40,
+      70,
+      460,
+      650
+    ],
+    "file": "textures/toilet-stripped-plaster.png",
+    "method": "Stripped plaster with putty and yellow remnants, no grout"
+  }
+}
