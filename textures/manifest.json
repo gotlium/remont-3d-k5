@@ -303,6 +303,22 @@
     "face": "+x",
     "method": "axis-aligned photo crop; perspective retained"
   },
+  "living-rug": {
+    "source_image": "house-photo/named/зал-тумба-под-телевизором-без-заслоняющих-предметов.jpg",
+    "image_size": [
+      506,
+      900
+    ],
+    "rect_xywh": [
+      95,
+      610,
+      310,
+      135
+    ],
+    "file": "textures/living-rug.png",
+    "face": "+z",
+    "method": "Clean marbled rug patch below the cabinet, no loose objects; stretched over rug footprint"
+  },
   "living-framed-photo": {
     "source_image": "house-photo/зал-вид-с-дивана.jpeg",
     "image_size": [
