@@ -1553,7 +1553,7 @@ for(const wall of data.walls.filter(w=>w.room==='balcony')){
 }
 if(partHandlers.size!==JSON.parse(document.getElementById('k5-part-ids').textContent).length)throw Error('Не для всех деталей создан обработчик');
 
-let activePhoto=null,frameAspect=null,k5Initializing=true;
+let activePhoto=null,frameAspect=null,k5Initializing=true,k5WalkObstacleBounds=null;
 const k5PhotoRestore=new Map(),k5ItemsById=new Map(k5Source.items.map(i=>[i.id,i]));
 const animationDuration=320,photoSelect=document.getElementById('photo-views');
 for(const view of photoViews){const option=document.createElement('option');option.value=view.id;option.textContent=view.name_ru;photoSelect.append(option);}
@@ -1588,11 +1588,13 @@ function k5Visibility(){
  document.getElementById('bath-door-toggle').textContent=bath.open?'Закрыть дверь ванной':'Открыть дверь ванной';
  document.getElementById('orbit').setAttribute('aria-pressed',String(mode==='orbit'));
 }
-function k5FurnitureBlocked(x,z){
+function* k5ObstacleBounds(){
  scene.updateMatrixWorld(true);
- for(const mesh of k5ObstacleMeshes){
-  if(!visibleObject(mesh))continue;
-  const b=new THREE.Box3().setFromObject(mesh);
+ for(const mesh of k5ObstacleMeshes)if(visibleObject(mesh))yield new THREE.Box3().setFromObject(mesh);
+}
+function k5FurnitureBlocked(x,z){
+ const bounds=k5WalkObstacleBounds||k5ObstacleBounds();
+ for(const b of bounds){
   if(b.max.y<=.15||b.min.y>=data.eye_height)continue;
   const dx=Math.max(b.min.x-x,0,x-b.max.x),dz=Math.max(b.min.z-z,0,z-b.max.z);
   if(dx*dx+dz*dz<data.body_radius**2)return true;
@@ -1823,6 +1825,73 @@ function selectHashRoom(){
 addEventListener('hashchange',selectHashRoom);
 selectRoom(null);setMode('plan');selectHashRoom();requestAnimationFrame(draw);document.body.dataset.ready='true';
 
+// Keep the shared flat-1 runtime intact; specialise only K5 entrance selection.
+const k5SharedRoomWalk=roomWalk;
+const k5MainEntrances={kids:'door-kids',bedroom:'door-bedroom',living:'arch-living',hall:'door-entrance',toilet:'door-toilet',bathroom:'door-bathroom-hall',kitchen:'door-kitchen-balcony',balcony:'door-kitchen-balcony'};
+function k5WalkSight(room,point,direction,boxes){
+ const ray=new THREE.Ray(new THREE.Vector3(point[0],data.eye_height,point[1]),direction);
+ let distance=15;
+ for(let i=0;i<room.polygon.length;i++){
+  const a=room.polygon[i],b=room.polygon[(i+1)%room.polygon.length];
+  const ex=b[0]-a[0],ez=b[1]-a[1],den=direction.x*ez-direction.z*ex;
+  if(Math.abs(den)<1e-9)continue;
+  const ax=a[0]-point[0],az=a[1]-point[1],t=(ax*ez-az*ex)/den,u=(ax*direction.z-az*direction.x)/den;
+  if(t>=0&&u>=0&&u<=1)distance=Math.min(distance,t);
+ }
+ for(const box of boxes){const hit=ray.intersectBox(box,new THREE.Vector3());if(hit)distance=Math.min(distance,hit.distanceTo(ray.origin));}
+ return distance;
+}
+roomWalk=function(room){
+ k5WalkObstacleBounds=[...k5ObstacleBounds()];
+ try{k5EnterRoom(room);}finally{k5WalkObstacleBounds=null;}
+};
+function k5EnterRoom(room){
+ if(room.id==='bathroom'){camera.fov=78;camera.updateProjectionMatrix();}
+ const entry=data.apertures.find(a=>a.source.id===k5MainEntrances[room.id]);
+ const mid=[(entry.a[0]+entry.b[0])/2,(entry.a[1]+entry.b[1])/2],centre=roomCentre(room);
+ // Reuse the flat-1 doorway offset and collision predicate, then search finely
+ // around that entrance rather than accepting the first cell anywhere in the room.
+ const boxes=k5WalkObstacleBounds;
+ const sightBoxes=boxes.filter(b=>b.min.y<data.eye_height&&b.max.y>data.eye_height);
+ const free=p=>polygonContains(...p,room.polygon)&&!blocked(...p);
+ const direction=p=>new THREE.Vector3(centre[0]-p[0],0,centre[1]-p[1]).normalize();
+ const choose=p=>{
+  let d=direction(p),sight=k5WalkSight(room,p,d,sightBoxes);
+  if(['toilet','bathroom'].includes(room.id)||sight<1.5){
+   for(let degree=0;degree<360;degree++){
+    const angle=degree*Math.PI/180,next=new THREE.Vector3(Math.sin(angle),0,Math.cos(angle));
+    const length=k5WalkSight(room,p,next,sightBoxes);
+    if(length>sight){sight=length;d=next;}
+   }
+  }
+  return {p,d,sight};
+ };
+ // Preserve the working shared starts where they satisfy the entrance contract.
+ if(['kids','bedroom','balcony'].includes(room.id)){
+  k5SharedRoomWalk(room);
+  const p=[camera.position.x,camera.position.z],d=camera.getWorldDirection(new THREE.Vector3());d.y=0;d.normalize();
+  if(camera.position.y===data.eye_height&&free(p)&&Math.hypot(p[0]-mid[0],p[1]-mid[1])<=1.05&&k5WalkSight(room,p,d,sightBoxes)>=1.5)return;
+ }
+ let best=null;
+ const preferred=[mid[0]-entry.normal[0]*.36,mid[1]-entry.normal[1]*.36];
+ if(free(preferred)){const candidate=choose(preferred);if(candidate.sight>=1.5)best=candidate;}
+ if(!best){
+  const candidates=[];
+  for(let ix=-50;ix<=50;ix++)for(let iz=-50;iz<=50;iz++){
+   const p=[mid[0]+ix*.02,mid[1]+iz*.02],distance=Math.hypot(p[0]-mid[0],p[1]-mid[1]);
+   if(distance<=1.05)candidates.push({p,distance});
+  }
+  candidates.sort((a,b)=>a.distance-b.distance);
+  for(const {p} of candidates){
+   if(!free(p))continue;
+   const candidate=choose(p);
+   if(!best||candidate.sight>best.sight)best=candidate;
+   if(candidate.sight>=1.5){best=candidate;break;}
+  }
+ }
+ if(best){setWalk(best.p,[best.p[0]+best.d.x,best.p[1]+best.d.z]);return;}
+ ViewerLanguage.bind(status,'Нет свободной точки входа — проверьте геометрию данных');
+}
 for(const {g} of openingGroups){const mesh=g.getObjectByName('door-leaf');if(mesh)k5ObstacleMeshes.push(mesh);}
 const apiSetMode=next=>{if(!['orbit','plan','walk'].includes(next))throw new RangeError('Неизвестный режим: '+next);setMode(next);k5UpdateHash();};
 window.k5viewer={selectRoom,setMode:apiSetMode,setNoFurniture,toggle,openAll,closeAll,photoView,snapshot};
